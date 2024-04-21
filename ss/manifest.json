@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Screen Capture Extension",
+  "version": "1.0",
+  "description": "A browser extension to capture and download screenshots.",
+  "host_permissions": [
+    
+    "http://*/*",
+    "https://*/*",
+    "https://google.com/*",
+    "<all_urls>"
+  ],
+  "permissions": [
+  
+    "tabs",
+    "storage",
+    "notifications",
+    "webNavigation",
+    "scripting",
+    "downloads"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }]
+}
